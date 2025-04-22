@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>The Hlivkovian Republic — Citizen's Press</title>
+		<link rel="shortcut icon" type="image/png" href="./../assets/favicon.svg">
+		<link href="./../assets/styles.css" rel="stylesheet" type="text/css" id="styles"/>
+		<script src="./../assets/js/main.js" async></script>
+		<script src="./../assets/js/citizensPress.js" async></script>
+	</head>
+	<body>
+		<div class="mainBody" id="news">
+			<div class="newsList"></div>
+			<div class="newsArticle" style="display: none;">
+				<p onclick="returnToList();" class="back fa-solid">&#xf060</p>
+				<p class="date"></p>
+				<div class="author">
+					<img>
+					<p>Posted by <span></span></p>
+				</div>
+				<p class="watermark">BREAKING NEWS | NHC NEWS</p>
+				<h2 class="title"></h2>
+				<p class="desc"></p>
+				<div class="barGraph"></div>
+				<div class="articleImg">
+					<img onclick="viewImage();">
+					<p></p>
+				</div>
+				<p class="copyright"></p>
+			</div>
+		</div>
+		<div class="imagePreview" style="display: none;">
+			<img>
+			<p></p>
+		</div>
+	</body>
+</html>
