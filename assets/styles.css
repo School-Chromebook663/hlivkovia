@@ -1,0 +1,432 @@
+/*	--------------------------------------------------------------------------------------------------------------------------------  */
+/*	BASIC CONTENT  */
+/*	--------------------------------------------------------------------------------------------------------------------------------  */
+@import url("./fonts/fontawesome/all.css");
+:root {
+	--black: #000;
+	--blue: #0001fc;
+	--gold: #915f20;
+	--goldLight: #e9ab40;
+	--goldTrans: #915e20b9;
+	--gray: #343434;
+	--white: #fff;
+}
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	overflow-x: hidden;
+}
+
+/*	--------------------------------------------------------------------------------------------------------------------------------	*/
+/*	SIDEBAR  */
+/*	--------------------------------------------------------------------------------------------------------------------------------	*/
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 230px;
+	height: 100vh;
+	background: linear-gradient(to left, var(--goldTrans), rgba(0,0,0,.2)), url("./sidebarFabric.png");
+	color: var(--white);
+	filter: drop-shadow(5px -5px 10px rgba(0,0,0,.75));
+	overflow-y: auto;
+	padding-top: 20px;
+	z-index: 1;
+	padding: 10px;
+	border-right: 1px dashed var(--goldLight);
+}
+.sidebar img {
+	filter: drop-shadow(-10px 10px 10px rgba(0,0,0,.75));
+	width: 150px;
+	height: 150px;
+	border: 1px dashed var(--goldLight);
+	border-radius: 100%;
+	margin: 0 0 20px 40px;
+	padding: 0;
+	transition: .1s ease-in-out;
+}
+.sidebar img:hover {
+	rotate: -5deg;
+	scale: .975;
+}
+.sidebar img::selection {
+	background: transparent;
+}
+.sidebar a, .sidebar summary {
+	display: block;
+	color: var(--white);
+	padding: 10px 20px;
+	margin-bottom: 10px;
+	text-decoration: none;
+	cursor: pointer;
+	border: 1px dashed var(--black);
+	border-radius: 10px;
+	backdrop-filter: brightness(.75) blur(.5px);
+	transition: .25s;
+}
+.sidebar a:hover, .sidebar summary:hover, .sidebar details[open] summary {
+	backdrop-filter: brightness(.5) blur(1px);
+}
+.sidebar a:hover {
+	rotate: -2.5deg;
+	scale: .975;
+}
+.sidebar span {
+	color: var(--goldLight);
+	width: 20px;
+}
+.sidebar summary::after {
+	content: "▼";
+	float: right;
+}
+.sidebar details[open] summary::after {
+	color: var(--goldLight);
+	content: "▲";
+}
+.sidebarDropdown {
+	padding: 10px;
+	margin: -10px 10px 10px 10px;
+	border-radius: 0 0 10px 10px;
+	background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.333) 25px);
+}
+.sidebarDropdown a {
+	padding: 8px 20px;
+	display: block;
+	backdrop-filter: brightness(1.25);
+	border-color: var(--gold);
+}
+.sidebarDropdown a:hover {
+	backdrop-filter: brightness(.75);
+}
+
+/*	--------------------------------------------------------------------------------------------------------------------------------	*/
+/*	LANDING PAGE  */
+/*	--------------------------------------------------------------------------------------------------------------------------------	*/
+.mainBody {
+	margin-left: 250px;
+	width: calc(100vw - 250px);
+	overflow-x: hidden;
+	height: fit-content;
+	min-height: 100vh;
+}
+
+section {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+section::after {
+	content: url("./headerWave.svg");
+	position: absolute;
+	width: 100%;
+	height: 20px;
+	bottom: 20%;
+}
+section img {
+	pointer-events: none;
+	width: 100%;
+	display: block;
+	filter: sepia(.5) contrast(.5) saturate(2);
+}
+section .title {
+	position: absolute;
+	font-size: 30px;
+}
+section h2 {
+	font-weight: 900;
+}
+
+.leaderStrip {
+	background: url("./leaderStrip.png");
+	color: #fff;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+	filter: drop-shadow(0 5px 5px rgba(0,0,0,.75));
+}
+.leaderStrip h2 {
+	position: absolute;
+	background: rgba(0,0,0,.75);
+	border-radius: 10px;
+	padding: 10px;
+	top: -10px;
+}
+.leaderStrip div {
+	margin: 10px;
+	margin-top: 50px;
+	padding: 10px;
+	backdrop-filter: brightness(0.5);
+	border-radius: 10px;
+	width: 20%;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	transition: transform 0.2s;
+}
+.leaderStrip div:hover {
+	transform: scale(1.05);
+}
+.leaderStrip img {
+	width: 100px;
+	border-radius: 50%;
+	border: 2px solid #fff;
+}
+
+/*	--------------------------------------------------------------------------------------------------------------------------------	*/
+/*	NEWS & POLLING  */
+/*	--------------------------------------------------------------------------------------------------------------------------------	*/
+#news {
+	background: linear-gradient(#fffc, #fffc), url("./images/bgNews.png");
+	overflow-y: hidden;
+}
+
+.newsList {
+	margin-top: 50px;
+}
+.newsList div {
+	background: #fff;
+	width: calc(100vw - 300px);
+	margin-left: 50px;
+	border: 1px solid transparent;
+	border-radius: 20px 0 0 20px;
+	height: 75px;
+	margin-bottom: 20px;
+	filter: drop-shadow(-5px 5px 5px rgba(0,0,0,.25));
+	transition: .25s;
+	cursor: pointer;
+}
+.newsList div:hover {
+	transform: translateX(25px);
+	border-color: var(--goldLight);
+}
+.newsList p {
+	position: absolute;
+	pointer-events: none;
+}
+.newsList .fa-solid {
+	left: 20px;
+	top: -20px;
+	font-size: 40px;
+	color: #ddd;
+	transition: .25s;
+}
+.newsList div:hover .fa-solid {
+	animation: newsIcoSway .5s infinite;
+	color: var(--goldLight);
+}
+@keyframes newsIcoSway {
+	from, to {transform: rotate(5deg);}
+	50% {transform: rotate(-5deg);}
+}
+.newsList .fa-solid::selection {
+	background: none;
+}
+.newsList .title {
+	left: 80px;
+	top: 20px;
+	font-size: 20px;
+	font-weight: 700;
+}
+.newsList .date {
+	left: 80px;
+	color: #777;
+}
+.newsList span {
+	color: #999;
+}
+
+.newsArticle {
+	margin: 50px;
+	background: #fff;
+	border-radius: 20px;
+	padding: 60px;
+	padding-top: 80px;
+}
+.newsArticle .back {
+	background: #ddd;
+	position: absolute;
+	left: 300px;
+	top: 50px;
+	padding: 10px;
+	border: 1px solid transparent;
+	border-radius: 100%;
+	margin-left: 20px;
+	cursor: pointer;
+	transition: .1s ease-in-out;
+}
+.newsArticle .back:hover {
+	background: transparent;
+	border-color: var(--goldLight);
+	scale: 1.25;
+}
+.newsArticle .date {
+	position: absolute;
+	right: 80px;
+	top: 60px;
+	color: #777;
+}
+.newsArticle .date span {
+	color: #999;
+}
+.newsArticle .author img {
+	position: absolute;
+	left: 380px;
+	top: 65px;
+	width: 40px;
+	border-radius: 100%;
+	pointer-events: none;
+}
+.newsArticle .author p {
+	position: absolute;
+	left: 430px;
+	top: 60px;
+	color: #777;
+}
+.newsArticle .author p span {
+	font-style: italic;
+	text-decoration: underline;
+}
+
+.barGraph {
+	width: 90%;
+	margin: 20px;
+	border: 2px solid #ccc;
+	border-radius: 8px;
+	padding: 10px;
+}
+.barGraph .bar {
+	height: 30px;
+	width: 100%;
+	background-color: #eee;
+	margin: 5px 0;
+	border-radius: 5px;
+	position: relative;
+}
+.barGraph .filled {
+	height: 100%;
+	background-color: #ffd489;
+	border-radius: 5px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: right;
+	padding-right: 10px;
+}
+.barGraph .label {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	text-align: center;
+	color: #333;
+}
+
+.articleImg {
+	text-align: center;
+}
+.articleImg img {
+	border-radius: 20px;
+}
+.articleImg p {
+	font-size: 10px;
+	margin: 0;
+	padding: 0;
+}
+
+.imagePreview {
+	background: rgba(0,0,0,.9);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 50px;
+	box-sizing: border-box;
+}
+.imagePreview img {
+	max-width: 100%;
+	max-height: calc(100% - 40px);
+	object-fit: contain;
+	margin-bottom: 10px;
+}
+.imagePreview p {
+	color: #fff;
+	font-size: 16px;
+	margin: 0;
+}
+
+/*	--------------------------------------------------------------------------------------------------------------------------------	*/
+/*	THE CREW  */
+/*	--------------------------------------------------------------------------------------------------------------------------------	*/
+#members {
+	background: linear-gradient(#fffc, #fff7), url("./images/bgMembers.png");
+	text-align: center;
+}
+#members h1 {
+	color: #333;
+}
+
+.member {
+	display: flex;
+	align-items: center;
+	background: #fff;
+	border-radius: 8px;
+	padding: 15px;
+	margin: 10px 0;
+	margin-left: 50px;
+	width: calc(100vw - 380px);
+	box-shadow: 0 2px 4px rgba(0,0,0,.1);
+	text-align: left;
+	transition: .25s;
+}
+.member:hover {
+	scale: .95;
+}
+.member span {
+	pointer-events: none;
+}
+.member .image {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 15px;
+	pointer-events: none;
+}
+.member .info {
+	display: flex;
+	flex-direction: column;
+}
+.member .name {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.member .role {
+	background-color: var(--goldLight);
+	color: #fff;
+	border-radius: 15px;
+	padding: 5px 10px;
+	margin-top: 5px;
+	display: inline-block;
+	width: fit-content;
+}
+
+/*	--------------------------------------------------------------------------------------------------------------------------------	*/
+/*	RESOURCES - OUR CONSTITUTION  */
+/*	--------------------------------------------------------------------------------------------------------------------------------	*/
+#constitution {
+	background: linear-gradient(#fffc, #fff7), url("./images/bgConstitution.png");
+	overflow-y: hidden;
+	height: 100vh;
+}
+#constitution iframe {
+	width: calc(100vw - 350px);
+	height: calc(100vh - 100px);
+	display: block;
+	margin: 50px 50px;
+}
