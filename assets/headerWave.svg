@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 16" xmlns:bx="https://boxy-svg.com">
+	<defs>
+		<filter id="drop-shadow-filter-0" bx:preset="drop-shadow 1 0 -1 1 0.25 #000" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
+			<feGaussianBlur in="SourceAlpha" stdDeviation="1"></feGaussianBlur>
+			<feOffset dx="0" dy="-1"></feOffset>
+			<feComponentTransfer result="offsetblur">
+				<feFuncA id="spread-ctrl" type="linear" slope="0.5"></feFuncA>
+			</feComponentTransfer>
+			<feFlood flood-color="#000"></feFlood>
+			<feComposite in2="offsetblur" operator="in"></feComposite>
+			<feMerge>
+				<feMergeNode></feMergeNode>
+				<feMergeNode in="SourceGraphic"></feMergeNode>
+			</feMerge>
+		</filter>
+	</defs>
+	<path style="fill:#fff; filter: url(#drop-shadow-filter-0);" d="M 0 8 L 0 16 L 128 16 L 128 8 C 120 9 120 7 112 8 C 104 9 104 7 96 8 C 88 9 88 7 80 8 C 72 9 72 7 64 8 C 56 9 56 7 48 8 C 40 9 40 7 32 8 C 24 9 24 7 16 8 C 8 9 8 7 0 8 Z"></path>
+</svg>

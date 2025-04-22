@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 178 178">
+	<rect width="178" height="178" style="fill:#fff;"></rect>
+	<path style="fill:#343434;" d="M 178 0 L 127 0 C 124.174 35.595 115.327 63.991 89 88.5 C 126.924 131.173 126.752 168.578 127 178 L 178 178 L 178 0 Z"></path>
+	<path style="fill:#915f20;" d="M 69 34 C 71.842 46.489 85.068 65.447 89 70 C 93.346 65.483 105.061 46.89 109 34 L 69 34 Z"></path>
+	<path style="fill:#915f20;" d="M 64 178 C 64.055 167.298 65.431 151.157 70 143 L 108 143 C 112.45 149.563 113.918 168.761 114 178 L 64 178 Z"></path>
+	<path style="fill:#343434; transform-box: fill-box; transform-origin: 50% 50%;" d="M 89 178 L 38 178 C 35.174 142.405 26.327 114.009 0 89.5 C 37.924 46.827 37.752 9.422 38 0 L 89 0 L 89 178 Z" transform="matrix(-1, 0, 0, -1, -0.000001, 0.000002)"></path>
+</svg>
